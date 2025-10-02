@@ -1,0 +1,21 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/go-postgres
+{
+	"name": "flight-sql-adbc-server",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-azuretools.vscode-docker",
+				"golang.go"
+			]
+		}
+	},
+	"mounts": [
+		"source=${localEnv:HOME}/.config/claude-code,target=/root/.config/claude-code,type=bind",
+		"source=${localEnv:HOME}/.local/share/claude-code,target=/root/.local/share/claude-code,type=bind"
+	],
+	"remoteUser": "root"
+}
